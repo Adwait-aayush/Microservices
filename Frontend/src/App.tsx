@@ -1,13 +1,18 @@
 
-import Try from './try'
 import './App.css'
-
+import Header from './Components/Header'
+import Navbar from './Components/Navbar'
+import Output from './Components/Output'
+import Main from './Components/Main'
 function App() {
 
 
   return (
     <>
-    <Try/>
+    <Header/>
+    <Navbar/>
+    <Output/>
+    <Main/>
     </>
   
   )
