@@ -12,6 +12,6 @@ func(app *App) router() http.Handler{
 	mux:=chi.NewRouter()
 	mux.Use(middleware.Heartbeat("/ping"))
 	mux.Use(enableCORS)
-	mux.Get("/Broker",app.Broker)
+	mux.Post("/Broker",app.Broker)
 	return mux
 }

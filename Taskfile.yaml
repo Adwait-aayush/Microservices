@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build all Docker services
+    cmds:
+      - docker-compose build
+    sources:
+      - Brokerservice/**/*
+      - Frontend/**/*
+      - docker-compose.yml
+    method: timestamp
+
+  up:
+    desc: Start all Docker services
+    cmds:
+      - docker-compose up
+
+  stop:
+    desc: Stop all Docker services
+    cmds:
+      - docker-compose down   
+
+  start:
+    desc: Build and run all Docker services
+    cmds:
+      - task: build
+      - task: up             
