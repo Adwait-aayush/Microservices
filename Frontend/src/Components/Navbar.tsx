@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useData } from "./Context";
+// import { data } from "react-router-dom";
 export default function Navbar() {
    
-      
+      const {setData}=useData();
         const [activeItem, setActiveItem] = useState('Test Broker');
   
         const handleTestBrokerClick = () => {
@@ -16,8 +18,9 @@ export default function Navbar() {
            }
            fetch('http://localhost:8080/Broker',reqoptions)
            .then(response => response.json())
-           .then(data => console.log(data))
-           .catch(error => console.error('Error:', error))
+           .then(data => setData(data))
+           
+           .catch(error => console.error('Error occurred while fetching data in Navbar component:', error))
         };
       
         const handleTestLoggerClick = () => {
